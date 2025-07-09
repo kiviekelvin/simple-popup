@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pop-Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f212bca9c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container" id="main-container">
+    <button type="button" class="btn" onclick="openPopup()">Submit</button>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="popup" id="popup">
+    <i class="fa-solid fa-circle-check"></i>
+    <h2>Thank You!</h2>
+    <p>Your details have been successfully submitted. Thanks!</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("overlay");
+    const container = document.getElementById("main-container");
+
+    function openPopup() {
+      popup.classList.add("open-popup");
+      overlay.classList.add("show");
+      container.classList.add("blurred");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePopup() {
+      popup.classList.remove("open-popup");
+      overlay.classList.remove("show");
+      container.classList.remove("blurred");
+      document.body.style.overflow = "auto";
+    }
+  </script>
+
+    
+</body>
+</html>
